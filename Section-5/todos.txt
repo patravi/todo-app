@@ -1,0 +1,4 @@
+clean
+read
+play
+fix

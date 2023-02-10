@@ -1,0 +1,5 @@
+run
+walk
+clean
+throw
+catch
