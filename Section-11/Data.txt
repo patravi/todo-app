@@ -1,5 +1,0 @@
-temperatures
-5
-7
-11
-10

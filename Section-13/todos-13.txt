@@ -1,4 +1,0 @@
-run fast
-walk slowly
-open the gate
-you just added a default arg
