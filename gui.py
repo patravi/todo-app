@@ -21,12 +21,14 @@ while True:
         case "Add":
             todos = functions.get_todos()
             new_todo = values['todo'] + "\n"
-            todos.append((new_todo))
+            print(4, new_todo)
+            todos.append(new_todo)
             functions.write_todos(todos)
             window['todos'].update(values=todos)
         case "Edit":
             todo_to_edit = values['todos'][0]
             new_todo = values['todo']
+            print(5, new_todo)
 
             todos = functions.get_todos()
             index = todos.index(todo_to_edit)
