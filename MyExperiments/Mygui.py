@@ -1,7 +1,7 @@
-import functions
-import PySimpleGUI as pg
-print(pg)
-
+# import functions
+# import PySimpleGUI as pg
+# print(pg)
+"""
 # 1 create layout
 label = pg.Text("Enter a todo")
 input_box = pg.InputText(tooltip="Enter todo", key="todo")
@@ -53,4 +53,43 @@ while True:
         case pg.WIN_CLOSED:
             break
 
+window.close()
+
+
+import PySimpleGUI as pg
+button_labels = ("Add", "Edit", "Apply", "End",
+                 "Cancel", "Undo", "Redo")
+layout = []
+for label in button_labels:
+    layout.append([pg.Button(label)])
+
+window = pg.Window("My to-do App", layout=layout)
+window.read()
+window.close()
+"""
+import PySimpleGUI as pg
+from converters import convert
+
+feet_label = pg.Text("Enter feet: ")
+input_box1 = pg.InputText(key="feet")
+
+inches_label = pg.Text("Enter inches: ")
+input_box2 = pg.InputText(key="inches")
+
+convert_btn = pg.Button("Convert")
+output_label = pg.Text("", key="output")
+
+layout = [[feet_label, input_box1],
+          [inches_label, input_box2],
+          [convert_btn, output_label]]
+window = pg.Window("Convertor", layout)
+
+while True:
+    event, values = window.read()
+    print(event, values)
+    feet = float(values["feet"])
+    inches = float(values["inches"])
+
+    result = convert(feet, inches)
+    window["output"].update(value=f"{result}, meters", text_color="white")
 window.close()
