@@ -1,11 +1,8 @@
-"""while True:
-    print ("Hello")"""
-user_prompt = "Enter a todo:"
+import glob
+myfiles = glob.glob("files3/*.txt")
 
-todos = []
+print(myfiles)
 
-while True:
-    todo = input(user_prompt)
-    print(todo.title())
-    todos.append(todo)
-    print(todos)
+for filepath in myfiles:
+    with open(filepath, 'r') as file:
+        print(file.read().upper())
